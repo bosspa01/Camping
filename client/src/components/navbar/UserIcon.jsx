@@ -1,0 +1,20 @@
+import { useUser } from '@clerk/react';
+import { CircleUserRound } from 'lucide-react';
+
+const UserIcon = () => {
+  const { user } = useUser();
+
+  if(user) {
+    return <img 
+    src={user.imageUrl}
+    className='w-6 h-6 rounded-full object-cover'
+    />;
+  }
+
+
+
+  return (
+    <CircleUserRound />
+  )
+}
+export default UserIcon
